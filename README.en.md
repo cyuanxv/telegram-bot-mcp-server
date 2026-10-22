@@ -6,6 +6,8 @@ Self-hosted Telegram Bot MCP server for AI assistants. Send rich messages, photo
 
 `telegram-bot-mcp-server` connects MCP-compatible clients to your own Telegram Bot through the Model Context Protocol. Run the backend in an environment you control and configure your own Bot credentials.
 
+[Installation](docs/QUICKSTART.en.md) · [FAQ](docs/FAQ.en.md) · [Features and requirements](docs/FEATURES.md) · [Report an issue](https://github.com/cyuanxv/telegram-bot-mcp-server/issues)
+
 ## What you can do
 
 - Send AI-written daily reports and summaries to your own Telegram chat.
@@ -48,7 +50,7 @@ The detailed guides below are currently in Chinese:
 1. [Install from scratch](docs/GETTING-STARTED.md): installation, configuration, startup, and connection checks.
 2. [Configuration](docs/CONFIGURATION.md): required settings and advanced features to leave disabled initially.
 3. [Feature boundaries](docs/FEATURES.md): basic, conditional, and experimental features.
-4. [Troubleshooting](docs/TROUBLESHOOTING.md): connection failures, missing receipts, and dependency warnings.
+4. [FAQ in English](docs/FAQ.en.md): Bot creation, installation, connection, and delivery troubleshooting; [developer troubleshooting](docs/TROUBLESHOOTING.md) is in Chinese.
 5. [Acceptance scope](docs/ACCEPTANCE.md): what the clean installation verified and what remains unverified.
 
 The following is the source-development path; use the npm tutorial above for installation. Use Node.js 24 and its bundled npm. After extraction, run all backend commands inside `server/`; do not run `npm ci` at the package root.
