@@ -1,4 +1,6 @@
 {
+  ".github/ISSUE_TEMPLATE/feature-request.md": "ab0a4d7d1e4889331c10f79f42dedb1df393db915d8eee531079919a84a226e5",
+  ".github/ISSUE_TEMPLATE/installation-failure.md": "15f4a6af19ce76a23e0a537ac4e99fe101b2fd768489d0a16dac8d7d1cd83fc0",
   ".gitignore": "2df8fef5f759ecab2a8f735107dd3b04dd2598dd2039eabdbedafe52c43bc5e5",
   "DEPENDENCY-LICENSES.json": "f87ce5f23d30c6f898bcfec92f62d36690a0d5d2cffe01598f303d1a8dc59267",
   "LICENSE": "7cf8c1187faa3b0408dbdfa1ef405bf56259954e55410dd69067acd1e0158d81",
