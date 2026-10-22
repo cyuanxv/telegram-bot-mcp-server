@@ -6,6 +6,24 @@
 
 `telegram-bot-mcp-server` 通过 MCP（模型上下文协议）让兼容客户端使用你自己的 Telegram Bot。服务运行在你控制的环境中，Bot 凭据由你配置和保管。
 
+## 你可以用它做什么
+
+- 把 AI 整理的日报、摘要发送到自己的 Telegram 会话。
+- 将文字、图片和文件交付给团队，随后按需要编辑消息。
+- 为消息添加链接、复制按钮；需要用户反馈时再配置回调。
+
+## 使用 npm 开始
+
+需要 Node.js 24，先设置自己的 `MCP_API_KEY` 进程环境，再运行：
+
+```sh
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+```
+
+首次启动会编译源码。连接地址为 `http://127.0.0.1:3000/api/mcp`，使用 Streamable HTTP，并携带 `Authorization: Bearer <你的 MCP_API_KEY>`。真实发送还需你自己的 Bot token 和目标 chat ID。
+
+[按步骤安装](docs/QUICKSTART.md) · [npm 安装包](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.0 Release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.0) · [官方 MCP Registry 条目](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.0)
+
 ## 主要功能
 
 - **富文本与编辑**：普通文字、HTML、MarkdownV2，以及已发送消息的编辑。
@@ -22,7 +40,7 @@
 
 ## 从这里开始
 
-[安装包自行部署](docs/PACKAGE-INSTALL.md) · [MCP Registry 发布准备](docs/REGISTRY-PUBLISHING.md)
+[npm 安装教程](docs/QUICKSTART.md) · [源码与本地安装包说明](docs/PACKAGE-INSTALL.md) · [Registry 发布维护说明](docs/REGISTRY-PUBLISHING.md)
 
 1. [从零安装](docs/GETTING-STARTED.md)：安装、配置、启动，以及如何确认连接成功。
 2. [配置说明](docs/CONFIGURATION.md)：最少需要填什么、哪些高级功能先保持关闭。
@@ -30,7 +48,7 @@
 4. [常见问题](docs/TROUBLESHOOTING.md)：连接失败、没有消息回执和依赖告警。
 5. [当前验收范围](docs/ACCEPTANCE.md)：本次全新安装做了什么，哪些还没验证。
 
-使用 Node.js 24 和随附的 npm。解压后所有后端命令都在 `server/` 目录执行，不要在本包根目录执行 `npm ci`。
+以下为源码开发方式；日常安装请优先看上面的 npm 教程。使用 Node.js 24 和随附的 npm。解压后所有后端命令都在 `server/` 目录执行，不要在本包根目录执行 `npm ci`。
 
 ```sh
 cd telegram-bot-mcp-server/server

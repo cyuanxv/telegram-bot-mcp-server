@@ -6,6 +6,24 @@ Self-hosted Telegram Bot MCP server for AI assistants. Send rich messages, photo
 
 `telegram-bot-mcp-server` connects MCP-compatible clients to your own Telegram Bot through the Model Context Protocol. Run the backend in an environment you control and configure your own Bot credentials.
 
+## What you can do
+
+- Send AI-written daily reports and summaries to your own Telegram chat.
+- Deliver text, photos, and files to your team, then edit messages when needed.
+- Add link and copy buttons; configure callbacks separately for user responses.
+
+## Start with npm
+
+Use Node.js 24. Set your own `MCP_API_KEY` in the process environment, then run:
+
+```sh
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+```
+
+The first launch compiles the source. Connect over Streamable HTTP at `http://127.0.0.1:3000/api/mcp` with `Authorization: Bearer <your MCP_API_KEY>`. Real delivery also requires your own Bot token and destination chat ID.
+
+[Step-by-step installation](docs/QUICKSTART.en.md) · [npm package](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.0 release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.0) · [Official MCP Registry entry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.0)
+
 ## Features
 
 - **Text and editing**: plain text, HTML, MarkdownV2, and editing sent messages.
@@ -22,7 +40,7 @@ See the [feature guide](docs/FEATURES.md) for configuration requirements. This r
 
 ## Getting started
 
-[Install the self-hosted package](docs/PACKAGE-INSTALL.md) · [MCP Registry publishing preparation](docs/REGISTRY-PUBLISHING.md)
+[npm installation tutorial](docs/QUICKSTART.en.md) · [Source and local package guide](docs/PACKAGE-INSTALL.md) · [Registry publishing maintenance](docs/REGISTRY-PUBLISHING.md)
 
 
 The detailed guides below are currently in Chinese:
@@ -33,7 +51,7 @@ The detailed guides below are currently in Chinese:
 4. [Troubleshooting](docs/TROUBLESHOOTING.md): connection failures, missing receipts, and dependency warnings.
 5. [Acceptance scope](docs/ACCEPTANCE.md): what the clean installation verified and what remains unverified.
 
-Use Node.js 24 and its bundled npm. After extraction, run all backend commands inside `server/`; do not run `npm ci` at the package root.
+The following is the source-development path; use the npm tutorial above for installation. Use Node.js 24 and its bundled npm. After extraction, run all backend commands inside `server/`; do not run `npm ci` at the package root.
 
 ```sh
 cd telegram-bot-mcp-server/server
