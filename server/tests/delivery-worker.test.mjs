@@ -1,0 +1,15 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {runDeliveryWorker} from '../lib/telegram/automation/delivery-worker.ts';
+const id='f9576a04-7728-4440-966c-58a0cb99b903';
+const cfg={TELEGRAM_DELIVERY_WORKER_ENABLED:'true',CRON_SECRET:'test-only',TELEGRAM_DELIVERY_WORKER_REPORT_IDS_JSON:JSON.stringify([id])};
+const req=(auth='Bearer test-only')=>new Request('https://example.test/run',{headers:{authorization:auth}});
+test('worker defaults off and rejects unauthorized requests before storage',async()=>{const w={report(){throw Error('unexpected')}};assert.equal((await runDeliveryWorker(req(),()=>({}),w)).status,503);assert.equal((await runDeliveryWorker(req('bad'),()=>cfg,w)).status,401)});
+test('dispatches only configured queued snapshot once',async()=>{let calls=[];const w={async report(action,target,hash){calls.push([action,target,hash]);return {state:action==='status'?'queued':'delivered',fingerprint:'a'.repeat(64),chunks:[{state:'pending'}]}}};const r=await (await runDeliveryWorker(req(),()=>cfg,w,0)).json();assert.equal(r.state,'delivered');assert.deepEqual(calls,[['status',id,undefined],['dispatch',id,'a'.repeat(64)]])});
+test('draft, unknown, sending and rejected never auto dispatch',async()=>{for(const state of ['draft','unknown','sending','rejected','delivered']){let calls=0;const w={async report(action){calls++;assert.equal(action,'status');return {state,chunks:[]}}};assert.equal((await (await runDeliveryWorker(req(),()=>cfg,w)).json()).status,'idle');assert.equal(calls,1)}});
+test('storage or dispatch uncertainty stops without retry',async()=>{let calls=0;const w={async report(action){calls++;if(action==='dispatch')throw Error('private database secret');return {state:'queued',fingerprint:'a'.repeat(64),chunks:[]}}};const r=await runDeliveryWorker(req(),()=>cfg,w);assert.equal(r.status,503);const body=await r.text();assert.ok(!body.includes('private'));assert.equal(calls,2)});
+test('future retry waits without dispatch',async()=>{const w={async report(action){assert.equal(action,'status');return {state:'retry_wait',chunks:[{state:'retry_wait',retryAt:2000}]}}};const r=await (await runDeliveryWorker(req(),()=>cfg,w,1000)).json();assert.equal(r.skipped[0].state,'retry_not_due')});
+test('live revocation is checked after status via workflow and before next job',async()=>{let cfgCalls=0;const w={report(){throw Error('unexpected')}};const r=await runDeliveryWorker(req(),()=>++cfgCalls===1?cfg:{...cfg,TELEGRAM_DELIVERY_WORKER_ENABLED:'false'},w);assert.equal(r.status,409)});
+test('invalid or duplicate configured IDs fail closed',async()=>{for(const ids of [[id,id],['bad'],{}])assert.equal((await runDeliveryWorker(req(),()=>({...cfg,TELEGRAM_DELIVERY_WORKER_REPORT_IDS_JSON:JSON.stringify(ids)}),{})).status,503)});
+
+test('revocation during status prevents dispatch',async()=>{let enabled=true;const w={async report(action){assert.equal(action,'status');enabled=false;return {state:'queued',fingerprint:'a'.repeat(64),chunks:[]}}};const r=await runDeliveryWorker(req(),()=>({...cfg,TELEGRAM_DELIVERY_WORKER_ENABLED:String(enabled)}),w);assert.equal(r.status,409)});

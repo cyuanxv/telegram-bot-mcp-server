@@ -1,0 +1,60 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cyuanxv/telegram-bot-mcp-server",
+  "title": "Telegram Bot MCP Server",
+  "description": "Self-hosted Telegram Bot MCP server for rich text, media and interactive buttons.",
+  "repository": {
+    "url": "https://github.com/cyuanxv/telegram-bot-mcp-server",
+    "source": "github",
+    "subfolder": "server"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@cyuanxv/telegram-bot-mcp-server",
+      "version": "1.0.0",
+      "runtimeHint": "npx",
+      "packageArguments": [
+        {
+          "type": "named",
+          "name": "--port",
+          "valueHint": "port",
+          "default": "3000",
+          "format": "number",
+          "isRequired": true
+        }
+      ],
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{port}/api/mcp",
+        "headers": [
+          {
+            "name": "Authorization",
+            "description": "Bearer followed by the same MCP_API_KEY configured for the local server.",
+            "isRequired": true,
+            "isSecret": true
+          }
+        ]
+      },
+      "environmentVariables": [
+        {
+          "name": "MCP_API_KEY",
+          "description": "Choose a strong local MCP access key. Use the same key in the Authorization header.",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "TELEGRAM_BOT_TOKEN",
+          "description": "Your own Telegram Bot token. Required for real Bot operations.",
+          "isSecret": true
+        },
+        {
+          "name": "TELEGRAM_CHAT_ID",
+          "description": "Your own default Telegram chat ID.",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const root = new URL('../', import.meta.url);
+const pkg = JSON.parse(readFileSync(new URL('package.json', root)));
+const server = JSON.parse(readFileSync(new URL('server.json', root)));
+assert.equal(pkg.name, '@cyuanxv/telegram-bot-mcp-server');
+assert.equal(pkg.version, '1.0.0');
+assert.equal(pkg.mcpName, server.name);
+assert.equal(server.version, pkg.version);
+assert.equal(server.packages[0].identifier, pkg.name);
+assert.equal(server.packages[0].version, pkg.version);
+assert.equal(server.packages[0].transport.type, 'streamable-http');
+assert.equal(server.packages[0].transport.url, 'http://127.0.0.1:{port}/api/mcp');
+assert.equal(server.remotes, undefined);
+assert.ok(server.description.length <= 100);
+assert.equal(typeof pkg.private, 'boolean');
+assert.equal(pkg.scripts.postinstall, undefined);
+assert.equal(pkg.scripts.prepublishOnly, undefined);
+console.log('Registry metadata consistency passed. No publication performed.');
+
+const route = readFileSync(new URL('app/api/mcp/route.ts', root), 'utf8');
+assert.ok(route.includes('name: "telegram-bot-mcp-server", version: "1.0.0"'));

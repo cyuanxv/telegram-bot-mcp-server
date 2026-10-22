@@ -1,0 +1,16 @@
+.vercel
+.next
+node_modules
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+
+dist-delivery/
+.npm-cache/
+*.sqlite*
+
+# Generated incremental compiler cache
+*.tsbuildinfo
+supabase/.temp/

@@ -1,0 +1,81 @@
+{
+  "name": "@cyuanxv/telegram-bot-mcp-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-test-module-mocks --import ./tests/register-typescript.mjs --test tests/*.test.mjs",
+    "test:protocol": "node tests/protocol-smoke.mjs",
+    "build:delivery": "tsc -p tsconfig.delivery.json",
+    "queue": "node dist-delivery/scripts/delivery-cli.js",
+    "inbox": "node dist-delivery/scripts/inbox-cli.js",
+    "demo:vault": "node --import ./tests/register-typescript.mjs scripts/vault-demo.mjs",
+    "demo:report": "node --import ./tests/register-typescript.mjs scripts/report-demo.mjs",
+    "test:review": "node --test-concurrency=2 --experimental-test-module-mocks --import ./tests/register-typescript.mjs --test review/*.test.mjs",
+    "serve": "node bin/telegram-bot-mcp-server.mjs",
+    "test:package": "node --test tests/package-cli.test.mjs",
+    "check:registry": "node scripts/check-registry.mjs"
+  },
+  "dependencies": {
+    "big-integer": "1.6.52",
+    "mcp-handler": "2.2.0",
+    "next": "16.3.8",
+    "pg": "8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "teleproto": "1.229.1",
+    "zod": "4.6.5",
+    "typescript": "5.9.3",
+    "@types/node": "24.19.1",
+    "@types/react": "19.3.0",
+    "@types/pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "description": "Self-hosted Telegram Bot MCP server for rich text, media and interactive buttons.",
+  "license": "MIT",
+  "author": "cyuanxv",
+  "mcpName": "io.github.cyuanxv/telegram-bot-mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyuanxv/telegram-bot-mcp-server.git",
+    "directory": "server"
+  },
+  "bin": {
+    "telegram-bot-mcp-server": "bin/telegram-bot-mcp-server.mjs"
+  },
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "migrations/",
+    "next.config.ts",
+    "next-env.d.ts",
+    "tsconfig.json",
+    "tsconfig.delivery.json",
+    ".env.example",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "server.json",
+    "scripts/delivery-cli.ts",
+    "scripts/inbox-cli.ts",
+    "scripts/check-registry.mjs",
+    "npm-shrinkwrap.json"
+  ],
+  "keywords": [
+    "telegram",
+    "telegram-bot",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "self-hosted"
+  ]
+}

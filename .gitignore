@@ -1,0 +1,13 @@
+**/node_modules/
+**/.next/
+**/dist/
+**/dist-delivery/
+**/.wrangler/
+**/.env*
+!**/.env.example
+**/.vercel/
+**/*.log
+**/*.tsbuildinfo
+**/*.db
+**/*.sqlite*
+.DS_Store
