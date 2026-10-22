@@ -6,6 +6,8 @@
 
 `telegram-bot-mcp-server` 通过 MCP（模型上下文协议）让兼容客户端使用你自己的 Telegram Bot。服务运行在你控制的环境中，Bot 凭据由你配置和保管。
 
+[安装教程](docs/QUICKSTART.md) · [常见问题](docs/FAQ.md) · [功能与配置要求](docs/FEATURES.md) · [反馈问题](https://github.com/cyuanxv/telegram-bot-mcp-server/issues)
+
 ## 你可以用它做什么
 
 - 把 AI 整理的日报、摘要发送到自己的 Telegram 会话。
@@ -45,7 +47,7 @@ npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
 1. [从零安装](docs/GETTING-STARTED.md)：安装、配置、启动，以及如何确认连接成功。
 2. [配置说明](docs/CONFIGURATION.md)：最少需要填什么、哪些高级功能先保持关闭。
 3. [功能边界](docs/FEATURES.md)：基础功能、条件功能与实验功能。
-4. [常见问题](docs/TROUBLESHOOTING.md)：连接失败、没有消息回执和依赖告警。
+4. [常见问题](docs/FAQ.md)：创建 Bot、安装与连接、发送排查；[开发排错](docs/TROUBLESHOOTING.md)补充源码检查。
 5. [当前验收范围](docs/ACCEPTANCE.md)：本次全新安装做了什么，哪些还没验证。
 
 以下为源码开发方式；日常安装请优先看上面的 npm 教程。使用 Node.js 24 和随附的 npm。解压后所有后端命令都在 `server/` 目录执行，不要在本包根目录执行 `npm ci`。
