@@ -43,8 +43,8 @@ try {
   const webhook = await fetch(`http://127.0.0.1:${port}/api/telegram/webhook/reports`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}'});
   assert.equal(webhook.status, 503);
   assert.equal((await webhook.json()).status, 'receiver_disabled');
-  const init = await rpc(1, 'initialize', { protocolVersion: '2025-03-26', capabilities: {}, clientInfo: { name: 'offline-smoke-test', version: '1.0.0' } });
-  assert.deepEqual(init.serverInfo, { name: 'telegram-bot-mcp-server', version: '1.0.0' });
+  const init = await rpc(1, 'initialize', { protocolVersion: '2025-03-26', capabilities: {}, clientInfo: { name: 'offline-smoke-test', version: '1.0.1' } });
+  assert.deepEqual(init.serverInfo, { name: 'telegram-bot-mcp-server', version: '1.0.1' });
   const legacyUrl = `http://127.0.0.1:${port}/api/mcp/legacy-compatibility-test`;
   assert.equal((await fetch(legacyUrl,{method:'POST'})).status,401);
   const legacy = await fetch(legacyUrl,{method:'POST',headers:{authorization:`Bearer ${testBearer}`,'content-type':'application/json',accept:'application/json, text/event-stream'},body:JSON.stringify({jsonrpc:'2.0',id:99,method:'initialize',params:{protocolVersion:'2025-03-26',capabilities:{},clientInfo:{name:'compatibility-test',version:'1'}}})});

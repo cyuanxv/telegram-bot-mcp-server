@@ -220,63 +220,63 @@
     },
     {
       "path": "node_modules/@next/env",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": false
     },
     {
       "path": "node_modules/@next/swc-darwin-arm64",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-darwin-x64",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-linux-arm64-gnu",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-linux-arm64-musl",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-linux-x64-gnu",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-linux-x64-musl",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-win32-arm64-msvc",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
     },
     {
       "path": "node_modules/@next/swc-win32-x64-msvc",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": true
@@ -292,21 +292,21 @@
       "path": "node_modules/@types/node",
       "version": "24.19.1",
       "license": "MIT",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
       "path": "node_modules/@types/pg",
       "version": "8.23.1",
       "license": "MIT",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
       "path": "node_modules/@types/react",
       "version": "19.3.0",
       "license": "MIT",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
@@ -355,7 +355,7 @@
       "path": "node_modules/csstype",
       "version": "3.2.3",
       "license": "MIT",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
@@ -381,7 +381,7 @@
     },
     {
       "path": "node_modules/ip-address",
-      "version": "10.7.3",
+      "version": "10.7.4",
       "license": "MIT",
       "dev": false,
       "optional": false
@@ -409,7 +409,7 @@
     },
     {
       "path": "node_modules/next",
-      "version": "16.3.8",
+      "version": "16.4.3",
       "license": "MIT",
       "dev": false,
       "optional": false
@@ -621,14 +621,14 @@
       "path": "node_modules/typescript",
       "version": "5.9.3",
       "license": "Apache-2.0",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
       "path": "node_modules/undici-types",
       "version": "7.24.6",
       "license": "MIT",
-      "dev": true,
+      "dev": false,
       "optional": false
     },
     {
@@ -647,7 +647,7 @@
     },
     {
       "path": "node_modules/zod",
-      "version": "4.6.5",
+      "version": "4.6.7",
       "license": "MIT",
       "dev": false,
       "optional": false

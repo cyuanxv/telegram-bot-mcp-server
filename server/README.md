@@ -7,10 +7,10 @@ Self-hosted Telegram Bot MCP server for rich text, media and interactive buttons
 Install a supplied source .tgz into a dedicated directory, without lifecycle scripts:
 
 ```sh
-npm install --ignore-scripts /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.0.tgz
+npm install --ignore-scripts /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.1.tgz
 ```
 
-After public publication, the same version can also be launched with `npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000`. This public-package command applies only once that version has been published, and requires the service environment described below.
+After public publication, the same version can also be launched with `npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000`. This public-package command applies only once that version has been published, and requires the service environment described below.
 
 Set a strong `MCP_API_KEY` in your service environment and run `./node_modules/.bin/telegram-bot-mcp-server --port 3000`. The first launch builds the source locally; subsequent launches use that build. Use the `build` subcommand to rebuild, or `start` to require an existing build. The source build workspace is under `~/.cache/telegram-bot-mcp-server/`; keep that user cache writable. Dependencies remain in your npm installation. No install hook builds or starts the service.
 

@@ -8,9 +8,9 @@
 |---|---|
 | GitHub仓库（计划） | cyuanxv/telegram-bot-mcp-server |
 | npm安装包（计划） | @cyuanxv/telegram-bot-mcp-server |
-| 正式版本（计划） | 1.0.0 |
+| 正式版本 | 1.0.1 |
 | Registry名称 | io.github.cyuanxv/telegram-bot-mcp-server |
-| 包内MCP协议身份 | telegram-bot-mcp-server / 1.0.0 |
+| 包内MCP协议身份 | telegram-bot-mcp-server / 1.0.1 |
 
 无作用域npm同名包已存在；使用作者作用域避免重名。用户已确认npm账号正常且账号名为`cyuanxv`；正式发布时使用该账号完成必要认证，并核对目标版本尚未发布。公开查询不存在不代表已经预留名称。GitHub身份认证只证明Registry命名空间，不能替代npm权限确认。
 
@@ -42,7 +42,7 @@ mcp-publisher validate
 
 1. 从干净源码建立无旧历史的公开仓库，并确认README、许可证、报告范围。
 2. 在安全终端核对npm发布账号和`@cyuanxv`作用域；不要把认证token写入项目。复查包内容、依赖、许可证和摘要，确认将来公开的正是已审阅tgz。
-3. 公开npm包：`npm publish /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.0.tgz --access public --ignore-scripts`。这是外部公开动作，本轮禁止执行。
+3. 公开npm包：`npm publish /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.1.tgz --access public --ignore-scripts`。仅在维护者明确授权发布时执行。
 4. 验证公开安装和`mcpName`所有权标记，再使用`mcp-publisher login github`完成用户交互认证；必须是拥有`cyuanxv`身份的账号。
 5. 再次validate，用户授权范围包含Registry时才运行`mcp-publisher publish`。
 6. 回读Registry条目、公开包和干净安装结果，记录版本/摘要；不添加私人服务作为remotes。

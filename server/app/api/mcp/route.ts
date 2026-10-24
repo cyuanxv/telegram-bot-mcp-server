@@ -511,7 +511,7 @@ const handler = createMcpHandler((server) => {
   }, async () => {
     return fail(new Error("Managed Bot editing is unavailable until a separately scoped secure management workflow is implemented"));
   });
-}, { serverInfo: { name: "telegram-bot-mcp-server", version: "1.0.0" } });
+}, { serverInfo: { name: "telegram-bot-mcp-server", version: "1.0.1" } });
 
 async function withAuth(request: Request) {
   const key = process.env.MCP_API_KEY;

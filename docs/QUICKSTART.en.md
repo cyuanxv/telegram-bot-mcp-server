@@ -2,7 +2,7 @@
 
 [中文](QUICKSTART.md) · [Project home](../README.en.md)
 
-Version: 1.0.0. These instructions use Bash on macOS or Linux, Node.js 24, npm, a writable user cache directory, and enough disk space for the first build. Windows is outside this tutorial's verified scope. No source checkout is required.
+Version: 1.0.1. These instructions use Bash on macOS or Linux, Node.js 24, npm, a writable user cache directory, and enough disk space for the first build. Windows is outside this tutorial's verified scope. No source checkout is required.
 
 ## 1. Prepare your own configuration
 
@@ -30,7 +30,7 @@ These settings live in this shell and its child processes. For persistent operat
 Confirm that `node --version` reports `v24.x`, then run:
 
 ```bash
-npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000
 ```
 
 Keep this terminal running. The first launch installs dependencies and compiles source under `~/.cache/telegram-bot-mcp-server/`; timing depends on your machine and connection. Later launches reuse the build. There are no install-time build hooks, automatic webhook registration, or database migrations.

@@ -28,8 +28,8 @@ try{
  }
  assert.equal(ready,true,'Build/start readiness timeout');successes.push('source package builds and serves from clean installation');
  assert.equal((await fetch(url,{method:'POST',headers:{authorization:'Bearer wrong'}})).status,401);successes.push('missing/wrong authentication rejected');
- const init=await rpc(1,'initialize',{protocolVersion:'2025-03-26',capabilities:{},clientInfo:{name:'local-package-acceptance',version:'1.0.0'}});
- assert.deepEqual(init.serverInfo,{name:'telegram-bot-mcp-server',version:'1.0.0'});successes.push('formal MCP identity');
+ const init=await rpc(1,'initialize',{protocolVersion:'2025-03-26',capabilities:{},clientInfo:{name:'local-package-acceptance',version:'1.0.1'}});
+ assert.deepEqual(init.serverInfo,{name:'telegram-bot-mcp-server',version:'1.0.1'});successes.push('formal MCP identity');
  const tools=await rpc(2,'tools/list',{});assert.equal(tools.tools.length,51);successes.push('51 tools discoverable');
  const result=await rpc(3,'tools/call',{name:'inspect_configuration',arguments:{}});assert.equal(result.isError,undefined);const config=JSON.parse(result.content[0].text);assert.equal(config.bots.count,0);assert.equal(config.database.connectivity,'not_checked');successes.push('credential-free configuration inspection');
  const bots=await rpc(4,'tools/call',{name:'list_bots',arguments:{}});assert.deepEqual(JSON.parse(bots.content[0].text),{bots:[]});successes.push('empty own-Bot configuration');
