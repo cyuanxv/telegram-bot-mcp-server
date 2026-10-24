@@ -19,12 +19,12 @@ Self-hosted Telegram Bot MCP server for AI assistants. Send rich messages, photo
 Use Node.js 24. Set your own `MCP_API_KEY` in the process environment, then run:
 
 ```sh
-npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000
 ```
 
 The first launch compiles the source. Connect over Streamable HTTP at `http://127.0.0.1:3000/api/mcp` with `Authorization: Bearer <your MCP_API_KEY>`. Real delivery also requires your own Bot token and destination chat ID.
 
-[Step-by-step installation](docs/QUICKSTART.en.md) · [npm package](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.0 release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.0) · [Official MCP Registry entry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.0)
+[Step-by-step installation](docs/QUICKSTART.en.md) · [npm package](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.1 release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.1) · [Official MCP Registry entry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.1)
 
 ## Features
 

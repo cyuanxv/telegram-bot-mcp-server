@@ -9,10 +9,10 @@ import { join, dirname } from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.includes('-h')) {
-  console.log('Telegram Bot MCP Server 1.0.0\nUsage: telegram-bot-mcp-server [serve|build|start] [--port 3000]\nDefault: serve (build if needed, then start on 127.0.0.1).\nSet MCP_API_KEY and your own TELEGRAM_* settings in the environment.\nThis package uses Streamable HTTP, not stdio. No remote service is included.');
+  console.log('Telegram Bot MCP Server 1.0.1\nUsage: telegram-bot-mcp-server [serve|build|start] [--port 3000]\nDefault: serve (build if needed, then start on 127.0.0.1).\nSet MCP_API_KEY and your own TELEGRAM_* settings in the environment.\nThis package uses Streamable HTTP, not stdio. No remote service is included.');
   process.exit(0);
 }
-if (args.length === 1 && args[0] === '--version') { console.log('1.0.0'); process.exit(0); }
+if (args.length === 1 && args[0] === '--version') { console.log('1.0.1'); process.exit(0); }
 const command = args[0] && !args[0].startsWith('-') ? args.shift() : 'serve';
 let port = '3000';
 for (let i = 0; i < args.length; i++) {

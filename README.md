@@ -19,12 +19,12 @@
 需要 Node.js 24，先设置自己的 `MCP_API_KEY` 进程环境，再运行：
 
 ```sh
-npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000
 ```
 
 首次启动会编译源码。连接地址为 `http://127.0.0.1:3000/api/mcp`，使用 Streamable HTTP，并携带 `Authorization: Bearer <你的 MCP_API_KEY>`。真实发送还需你自己的 Bot token 和目标 chat ID。
 
-[按步骤安装](docs/QUICKSTART.md) · [npm 安装包](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.0 Release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.0) · [官方 MCP Registry 条目](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.0)
+[按步骤安装](docs/QUICKSTART.md) · [npm 安装包](https://www.npmjs.com/package/@cyuanxv/telegram-bot-mcp-server) · [1.0.1 Release](https://github.com/cyuanxv/telegram-bot-mcp-server/releases/tag/v1.0.1) · [官方 MCP Registry 条目](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.cyuanxv%2Ftelegram-bot-mcp-server/versions/1.0.1)
 
 ## 主要功能
 

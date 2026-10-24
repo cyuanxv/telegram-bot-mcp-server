@@ -11,7 +11,7 @@ function run(args, key) {
   return result;
 }
 test('package CLI reports the formal version without starting a server', () => {
-  const r = run(['--version']); assert.equal(r.status, 0); assert.equal(r.stdout.trim(), '1.0.0');
+  const r = run(['--version']); assert.equal(r.status, 0); assert.equal(r.stdout.trim(), '1.0.1');
 });
 test('help describes HTTP and does not require credentials', () => {
   const r = run(['--help']); assert.equal(r.status, 0); assert.match(r.stdout, /Streamable HTTP/); assert.match(r.stdout, /127.0.0.1/);

@@ -1,6 +1,6 @@
 # 安装包自行部署
 
-项目：Telegram Bot MCP Server；版本为1.0.0。npm名称为`@cyuanxv/telegram-bot-mcp-server`，Registry名称为`io.github.cyuanxv/telegram-bot-mcp-server`。本页说明源码安装包的自行部署方式；公开npm安装命令仅适用于已经发布的版本。
+项目：Telegram Bot MCP Server；版本为1.0.1。npm名称为`@cyuanxv/telegram-bot-mcp-server`，Registry名称为`io.github.cyuanxv/telegram-bot-mcp-server`。本页说明源码安装包的自行部署方式；公开npm安装命令仅适用于已经发布的版本。
 
 ## 本地审阅安装
 
@@ -9,7 +9,7 @@
 ```sh
 mkdir telegram-bot-mcp-server-local
 cd telegram-bot-mcp-server-local
-npm install --ignore-scripts /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.0.tgz
+npm install --ignore-scripts /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1.0.1.tgz
 ```
 
 通过服务管理器/终端安全环境设置`MCP_API_KEY`，再运行：
@@ -35,7 +35,7 @@ npm install --ignore-scripts /absolute/path/to/cyuanxv-telegram-bot-mcp-server-1
 仅当维护者完成公开发布并确认包存在，用户才可改用：
 
 ```sh
-npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000
 ```
 
 同样需要先安全设置进程环境。用户缓存目录必须可写，以便首次编译。不要现在把以上命令写成已能从公网安装成功；当前只验收本地tgz。

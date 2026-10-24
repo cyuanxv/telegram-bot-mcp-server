@@ -2,7 +2,7 @@
 
 [English](QUICKSTART.en.md) · [项目首页](../README.md)
 
-适用版本：1.0.0。适用于 macOS / Linux 的 Bash 终端。需要 Node.js 24 和 npm、可写的用户缓存目录及首次编译所需磁盘空间。本文使用已公开安装包，不需要下载源码。Windows 未在本文验收范围。
+适用版本：1.0.1。适用于 macOS / Linux 的 Bash 终端。需要 Node.js 24 和 npm、可写的用户缓存目录及首次编译所需磁盘空间。本文使用已公开安装包，不需要下载源码。Windows 未在本文验收范围。
 
 ## 1. 准备自己的配置
 
@@ -30,7 +30,7 @@ export TELEGRAM_CHAT_ID
 先确认 `node --version` 是 `v24.x`，再运行：
 
 ```bash
-npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.0 --port 3000
+npx --yes @cyuanxv/telegram-bot-mcp-server@1.0.1 --port 3000
 ```
 
 保持此终端运行。第一次会安装依赖并在 `~/.cache/telegram-bot-mcp-server/` 下编译，耗时依网络和机器而变；后续启动复用构建。没有安装时自动执行的构建脚本，不会自动设置 webhook 或执行数据库迁移。
